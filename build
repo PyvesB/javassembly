@@ -1,0 +1,3 @@
+nasm -f elf64 -o ArraySum.o ArraySum.asm
+gcc -shared -z noexecstack -o libArraySum.so ArraySum.o
+javac JNIArraySum.java
