@@ -1,9 +1,3 @@
-%macro get_jni_func 2
-	mov rax, %1
-	add rax, %2
-	mov rax, [rax]
-%endmacro
-
 global Java_JNIArraySum_computeNativeArraySum
 
 section .data
@@ -21,9 +15,9 @@ Java_JNIArraySum_computeNativeArraySum:
 	push rdi		; store JNIEnv pointer
 	push rcx		; store array length
 	mov rsi, rdx		; set array parameter for GetIntArrayElements
-	get_jni_func [rdi], GetIntArrayElements
+	mov rax, [rdi]		; get location of JNI function table
 	xor edx, edx		; set isCopy to false
-	call rax
+	call [rax + GetIntArrayElements] 
 	pop rcx			; retrieve array length
 	lea rcx, [rax + 4 * rcx]; compute address following last array element
 	mov r8, rax		; copy native array pointer
@@ -37,9 +31,9 @@ Java_JNIArraySum_computeNativeArraySum:
 	pop rdi			; retrieve JNIEnv
 	pop rsi			; retrieve Java array pointer
 	push rbx		; store sum result
-	get_jni_func [rdi], ReleaseIntArrayElements
+	mov rax, [rdi]		; get location of JNI function table
 	mov rdx, r8		; set elems parameter for ReleaseIntArrayElements
-	call rax
+	call [rax + ReleaseIntArrayElements]
 	pop rax			; retrieve sum result	
 	ret
 
