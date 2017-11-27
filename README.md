@@ -36,6 +36,7 @@ java JNIArraySum
 #### :earth_americas: Useful links
 
 The following pages may be of interest:
+- [Related StackOverflow answer](https://stackoverflow.com/questions/11632078/code-injecting-assembly-inlining-in-java/43926410#43926410)
 - [Java JNI Functions](http://docs.oracle.com/javase/8/docs/technotes/guides/jni/spec/functions.html)
 - [NASM manual](http://www.nasm.us/xdoc/2.13.01/html/nasmdoc0.html) 
 
