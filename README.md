@@ -27,7 +27,7 @@ The example can easily be modified to accommodate other operating system or asse
 
 Simply use the following commands:
 ```
-git clone https://github.com/PyvesB/JavAssembly.git
+git clone https://github.com/PyvesB/javassembly.git
 cd JavAssembly
 ./build
 java JNIArraySum
