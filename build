@@ -1,3 +1,13 @@
-nasm -f elf64 -o ArraySum.o ArraySum.asm
+#!/bin/bash
+set -e
+
+assembler=$1
+if [ -z "$assembler" ]; then
+  echo "Please specify the assembler command to use, for instance nasm or yasm."
+  exit 1
+fi
+
+$assembler -f elf64 -o ArraySum.o ArraySum.asm
 gcc -shared -z noexecstack -o libArraySum.so ArraySum.o
+rm ArraySum.o
 javac JNIArraySum.java

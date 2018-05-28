@@ -9,7 +9,7 @@
 <img src ="https://img.shields.io/github/stars/PyvesB/JavAssembly.svg" />
 </a>
 
-**A simple example showing how Assembly language can be called from Java using the Java Native Interface (JNI). The native function sums the elements of an array of integers, and returns the result as a long.**
+**A simple example showing how assembly language can be called from Java using the Java Native Interface (JNI). The native function sums the elements of an array of integers, and returns the result as a long.**
 
 # Getting started
 
@@ -17,9 +17,9 @@
 
 To compile and run this project, you will need:
 - the JDK
-- the NASM assembler
-- the GCC compiler (used to create the shared library)
-- a Linux x64 operating system
+- an assembler such as NASM or Yasm
+- a compiler such as GCC or Clang
+- a Linux x64 or macOS operating system
 
 The example can easily be modified to accommodate other operating system or assembler requirements.
 
@@ -29,7 +29,10 @@ Simply use the following commands:
 ```
 git clone https://github.com/PyvesB/javassembly.git
 cd JavAssembly
-./build
+#Linux x64
+./build nasm
+#macOS
+./build_mac nasm
 java JNIArraySum
 ```
 
@@ -39,6 +42,7 @@ The following pages may be of interest:
 - [Related StackOverflow answer](https://stackoverflow.com/questions/11632078/code-injecting-assembly-inlining-in-java/43926410#43926410)
 - [Java JNI Functions](http://docs.oracle.com/javase/8/docs/technotes/guides/jni/spec/functions.html)
 - [NASM manual](http://www.nasm.us/xdoc/2.13.01/html/nasmdoc0.html) 
+- [Yasm manual](http://www.tortall.net/projects/yasm/manual/html/index.html)
 
 # Contributing
 
