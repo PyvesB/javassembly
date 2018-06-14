@@ -9,7 +9,7 @@
 <img src ="https://img.shields.io/github/stars/PyvesB/JavAssembly.svg" />
 </a>
 
-**A simple example showing how assembly language can be called from Java using the Java Native Interface (JNI). The native function sums the elements of an array of integers, and returns the result as a long.**
+**A simple example showing how assembly language can be called from Java using the Java Native Interface (JNI). The native function sums the elements of an array of integers and returns the result as a long.**
 
 # Getting started
 
@@ -39,10 +39,10 @@ java JNIArraySum
 #### :earth_americas: Useful links
 
 The following pages may be of interest:
-- [Related StackOverflow answer](https://stackoverflow.com/questions/11632078/code-injecting-assembly-inlining-in-java/43926410#43926410)
+- Related [DZone article](https://dzone.com/articles/pushing-the-jni-boundaries-java-meets-assembly)
+- Related [StackOverflow answer](https://stackoverflow.com/questions/11632078/code-injecting-assembly-inlining-in-java/43926410#43926410)
 - [Java JNI Functions](http://docs.oracle.com/javase/8/docs/technotes/guides/jni/spec/functions.html)
-- [NASM manual](http://www.nasm.us/xdoc/2.13.01/html/nasmdoc0.html) 
-- [Yasm manual](http://www.tortall.net/projects/yasm/manual/html/index.html)
+- Assembler manuals: [NASM](http://www.nasm.us/xdoc/2.13.01/html/nasmdoc0.html), [Yasm](http://www.tortall.net/projects/yasm/manual/html/index.html)
 
 # Contributing
 
