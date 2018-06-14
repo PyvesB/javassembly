@@ -60,4 +60,4 @@ Find the project useful, fun or interesting? **Star** the repository by clicking
 
 # License 
 
-GNU General Public License v3.0
+MIT License
