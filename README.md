@@ -18,10 +18,9 @@
 To compile and run this project, you will need:
 - the JDK
 - an assembler such as NASM or Yasm
-- a compiler such as GCC or Clang
-- a Linux x64 or macOS operating system
+- a compiler such as GCC, Clang or MinGW-w64
 
-The example can easily be modified to accommodate other operating system or assembler requirements.
+The example and build scripts can easily be modified to accommodate other assembler or compiler requirements.
 
 #### :cd: Running the code
 
@@ -33,6 +32,8 @@ cd JavAssembly
 ./build nasm
 #macOS
 ./build_mac nasm
+#Windows
+build.bat nasm
 java JNIArraySum
 ```
 
