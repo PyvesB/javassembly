@@ -20,7 +20,7 @@ Java_JNIArraySum_computeNativeArraySum:
     call [rax + GetIntArrayElements]
     pop rcx                   ; retrieve array length
     lea rcx, [rax + 4 * rcx]  ; compute loop end address (after last array element)
-    mov r8, rax               ; copy native array pointer for later use
+    mov rdx, rax              ; set elems parameter for future ReleaseIntArrayElements
     xor ebx, ebx              ; initialise sum accumulator
     add_element:
         movsxd r9, dword [rax]; get current element
@@ -32,7 +32,6 @@ Java_JNIArraySum_computeNativeArraySum:
     pop rsi                   ; retrieve Java array pointer
     push rbx                  ; store sum result
     mov rax, [rdi]            ; get location of JNI function table
-    mov rdx, r8               ; set elems parameter for ReleaseIntArrayElements
     call [rax + ReleaseIntArrayElements]
     pop rax                   ; retrieve sum result
     ret
