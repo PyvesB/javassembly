@@ -1,0 +1,7 @@
+ArraySum_Mac.asm
+*.class
+*.log
+*.o
+*.so
+.classpath
+.project
