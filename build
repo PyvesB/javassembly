@@ -7,7 +7,15 @@ if [ -z "$assembler" ]; then
   exit 1
 fi
 
-$assembler -f elf64 -o ArraySum.o ArraySum.asm
-gcc -shared -z noexecstack -o libArraySum.so ArraySum.o
+if [ "$(uname)" == "Darwin" ]; then
+  #Add leading underscore to match macOS calling convention.
+  sed 's/Java_JNIArraySum_computeNativeArraySum/_Java_JNIArraySum_computeNativeArraySum/g' ArraySum.asm > ArraySum_Mac.asm
+  $assembler -f macho64 -o ArraySum.o ArraySum_Mac.asm
+  clang -shared -o libArraySum.so ArraySum.o
+else
+  $assembler -f elf64 -o ArraySum.o ArraySum.asm
+  gcc -shared -z noexecstack -o libArraySum.so ArraySum.o
+fi
+
 rm ArraySum.o
 javac JNIArraySum.java

@@ -28,12 +28,10 @@ Simply use the following commands:
 ```
 git clone https://github.com/PyvesB/javassembly.git
 cd JavAssembly
-#Linux x64
+#Linux or macOS
 ./build nasm
-#macOS
-./build_mac nasm
 #Windows
-build.bat nasm
+build nasm
 java JNIArraySum
 ```
 
